@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a9a71bc3a0945c39783a1b1b0ed6334" Name="Diagram1" ZoomLevel="70" >
+        <EntityTypeShape EntityType="DBModel.FILM" Width="1.875" PointX="7.375" PointY="5.25" />
+        <EntityTypeShape EntityType="DBModel.FILMTAAL" Width="1.5" PointX="7.625" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TAAL" Width="1.5" PointX="7.625" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FILMFILMTAAL" />
+        <AssociationConnector Association="DBModel.TAALFILMTAAL" />
+        <EntityTypeShape EntityType="DBModel.FILMTYPE" Width="1.5" PointX="10" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TYPE" Width="1.5" PointX="12.25" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FILMFILMTYPE" />
+        <AssociationConnector Association="DBModel.TYPEFILMTYPE" />
+        <EntityTypeShape EntityType="DBModel.FILMREGISSEUR" Width="1.5" PointX="10" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.REGISSEUR" Width="1.5" PointX="12.125" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FILMFILMREGISSEUR" />
+        <AssociationConnector Association="DBModel.REGISSEURFILMREGISSEUR" />
+        <EntityTypeShape EntityType="DBModel.ROL" Width="1.5" PointX="4.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ACTEUR" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.ACTEURROL" />
+        <AssociationConnector Association="DBModel.FILMROL" />
+        <EntityTypeShape EntityType="DBModel.BEOORDELING" Width="1.5" PointX="4.75" PointY="5.375" />
+        <EntityTypeShape EntityType="DBModel.GEBRUIKER" Width="1.5" PointX="2.375" PointY="5.375" />
+        <AssociationConnector Association="DBModel.FILMBEOORDELING" />
+        <AssociationConnector Association="DBModel.GEBRUIKERBEOORDELING" />
+        <EntityTypeShape EntityType="DBModel.WIJZIGING" Width="1.5" PointX="2.375" PointY="9.5" />
+        <AssociationConnector Association="DBModel.GEBRUIKERWIJZIGING" />
+        <EntityTypeShape EntityType="DBModel.BLOCKED" Width="1.5" PointX="0.5" PointY="5.875" />
+        <AssociationConnector Association="DBModel.GEBRUIKERBLOCKED" />
+        <EntityTypeShape EntityType="DBModel.GROEPGEBRUIKER" Width="1.5" PointX="2.375" PointY="2.625" />
+        <EntityTypeShape EntityType="DBModel.GROEP" Width="1.5" PointX="4.75" PointY="2.75" />
+        <AssociationConnector Association="DBModel.GROEPGROEPGEBRUIKER" />
+        <AssociationConnector Association="DBModel.GEBRUIKERGROEPGEBRUIKER" />
+        <EntityTypeShape EntityType="DBModel.FILMGENRE" Width="1.5" PointX="7.375" PointY="10.125" />
+        <EntityTypeShape EntityType="DBModel.GENRE" Width="1.5" PointX="9.875" PointY="10.25" />
+        <AssociationConnector Association="DBModel.GENREFILMGENRE" />
+        <AssociationConnector Association="DBModel.FILMFILMGENRE" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

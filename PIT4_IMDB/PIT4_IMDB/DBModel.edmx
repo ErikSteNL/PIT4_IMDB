@@ -1,0 +1,1115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="FILMs" EntityType="DBModel.Store.FILMs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FILMTAALs" EntityType="DBModel.Store.FILMTAALs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TAALs" EntityType="DBModel.Store.TAALs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FILMTYPEs" EntityType="DBModel.Store.FILMTYPEs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TYPEs" EntityType="DBModel.Store.TYPEs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FILMREGISSEURs" EntityType="DBModel.Store.FILMREGISSEURs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="REGISSEURs" EntityType="DBModel.Store.REGISSEURs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ROLs" EntityType="DBModel.Store.ROLs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACTEURs" EntityType="DBModel.Store.ACTEURs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BEOORDELINGs" EntityType="DBModel.Store.BEOORDELINGs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GEBRUIKERs1" EntityType="DBModel.Store.GEBRUIKERs1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WIJZIGINGs" EntityType="DBModel.Store.WIJZIGINGs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BLOCKEDs" EntityType="DBModel.Store.BLOCKEDs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GROEPGEBRUIKERs" EntityType="DBModel.Store.GROEPGEBRUIKERs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GROEPs" EntityType="DBModel.Store.GROEPs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FILMGENREs" EntityType="DBModel.Store.FILMGENREs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GENREs" EntityType="DBModel.Store.GENREs" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FILMFILMTAAL" Association="DBModel.Store.FILMFILMTAAL">
+      <End Role="FILM" EntitySet="FILMs" />
+      <End Role="FILMTAAL" EntitySet="FILMTAALs" />
+    </AssociationSet>
+    <AssociationSet Name="TAALFILMTAAL" Association="DBModel.Store.TAALFILMTAAL">
+      <End Role="TAAL" EntitySet="TAALs" />
+      <End Role="FILMTAAL" EntitySet="FILMTAALs" />
+    </AssociationSet>
+    <AssociationSet Name="FILMFILMTYPE" Association="DBModel.Store.FILMFILMTYPE">
+      <End Role="FILM" EntitySet="FILMs" />
+      <End Role="FILMTYPE" EntitySet="FILMTYPEs" />
+    </AssociationSet>
+    <AssociationSet Name="TYPEFILMTYPE" Association="DBModel.Store.TYPEFILMTYPE">
+      <End Role="TYPE" EntitySet="TYPEs" />
+      <End Role="FILMTYPE" EntitySet="FILMTYPEs" />
+    </AssociationSet>
+    <AssociationSet Name="FILMFILMREGISSEUR" Association="DBModel.Store.FILMFILMREGISSEUR">
+      <End Role="FILM" EntitySet="FILMs" />
+      <End Role="FILMREGISSEUR" EntitySet="FILMREGISSEURs" />
+    </AssociationSet>
+    <AssociationSet Name="REGISSEURFILMREGISSEUR" Association="DBModel.Store.REGISSEURFILMREGISSEUR">
+      <End Role="REGISSEUR" EntitySet="REGISSEURs" />
+      <End Role="FILMREGISSEUR" EntitySet="FILMREGISSEURs" />
+    </AssociationSet>
+    <AssociationSet Name="ACTEURROL" Association="DBModel.Store.ACTEURROL">
+      <End Role="ACTEUR" EntitySet="ACTEURs" />
+      <End Role="ROL" EntitySet="ROLs" />
+    </AssociationSet>
+    <AssociationSet Name="FILMROL" Association="DBModel.Store.FILMROL">
+      <End Role="FILM" EntitySet="FILMs" />
+      <End Role="ROL" EntitySet="ROLs" />
+    </AssociationSet>
+    <AssociationSet Name="FILMBEOORDELING" Association="DBModel.Store.FILMBEOORDELING">
+      <End Role="FILM" EntitySet="FILMs" />
+      <End Role="BEOORDELING" EntitySet="BEOORDELINGs" />
+    </AssociationSet>
+    <AssociationSet Name="GEBRUIKERBEOORDELING" Association="DBModel.Store.GEBRUIKERBEOORDELING">
+      <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+      <End Role="BEOORDELING" EntitySet="BEOORDELINGs" />
+    </AssociationSet>
+    <AssociationSet Name="GEBRUIKERWIJZIGING" Association="DBModel.Store.GEBRUIKERWIJZIGING">
+      <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+      <End Role="WIJZIGING" EntitySet="WIJZIGINGs" />
+    </AssociationSet>
+    <AssociationSet Name="GEBRUIKERBLOCKED" Association="DBModel.Store.GEBRUIKERBLOCKED">
+      <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+      <End Role="BLOCKED" EntitySet="BLOCKEDs" />
+    </AssociationSet>
+    <AssociationSet Name="GROEPGROEPGEBRUIKER" Association="DBModel.Store.GROEPGROEPGEBRUIKER">
+      <End Role="GROEP" EntitySet="GROEPs" />
+      <End Role="GROEPGEBRUIKER" EntitySet="GROEPGEBRUIKERs" />
+    </AssociationSet>
+    <AssociationSet Name="GEBRUIKERGROEPGEBRUIKER" Association="DBModel.Store.GEBRUIKERGROEPGEBRUIKER">
+      <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+      <End Role="GROEPGEBRUIKER" EntitySet="GROEPGEBRUIKERs" />
+    </AssociationSet>
+    <AssociationSet Name="GENREFILMGENRE" Association="DBModel.Store.GENREFILMGENRE">
+      <End Role="GENRE" EntitySet="GENREs" />
+      <End Role="FILMGENRE" EntitySet="FILMGENREs" />
+    </AssociationSet>
+    <AssociationSet Name="FILMFILMGENRE" Association="DBModel.Store.FILMFILMGENRE">
+      <End Role="FILM" EntitySet="FILMs" />
+      <End Role="FILMGENRE" EntitySet="FILMGENREs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FILMs">
+    <Key>
+      <PropertyRef Name="FilmID" />
+    </Key>
+    <Property Name="IMDBNummer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FilmNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Duur" Type="int" Nullable="false" />
+    <Property Name="Geluid" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AlternatieveNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Poster" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ToegevoegdDatum" Type="datetime" Nullable="false" />
+    <Property Name="ToegevoegdDoor" Type="int" Nullable="false" />
+    <Property Name="Versie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GemiddeldeBeoordeling" Type="int" Nullable="false" />
+    <Property Name="FilmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FILMTAALs">
+    <Key>
+      <PropertyRef Name="FilmID" />
+      <PropertyRef Name="TaalID" />
+    </Key>
+    <Property Name="FilmID" Type="int" Nullable="false" />
+    <Property Name="TaalID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAALs">
+    <Key>
+      <PropertyRef Name="TaalID" />
+    </Key>
+    <Property Name="TaalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaalNaam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FILMTYPEs">
+    <Key>
+      <PropertyRef Name="FilmID" />
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="FilmID" Type="int" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TYPEs">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeNaam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FILMREGISSEURs">
+    <Key>
+      <PropertyRef Name="RegiID" />
+      <PropertyRef Name="FilmID" />
+    </Key>
+    <Property Name="RegiID" Type="int" Nullable="false" />
+    <Property Name="FilmID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REGISSEURs">
+    <Key>
+      <PropertyRef Name="RegiID" />
+    </Key>
+    <Property Name="RegiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegiNaam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROLs">
+    <Key>
+      <PropertyRef Name="RolID" />
+      <PropertyRef Name="FilmID" />
+      <PropertyRef Name="ActeurID" />
+    </Key>
+    <Property Name="RolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilmID" Type="int" Nullable="false" />
+    <Property Name="RolNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActeurID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTEURs">
+    <Key>
+      <PropertyRef Name="ActeurID" />
+    </Key>
+    <Property Name="ActeurID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActeurNaam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BEOORDELINGs">
+    <Key>
+      <PropertyRef Name="GebruikerID" />
+      <PropertyRef Name="FilmID" />
+    </Key>
+    <Property Name="GebruikerID" Type="int" Nullable="false" />
+    <Property Name="FilmID" Type="int" Nullable="false" />
+    <Property Name="AangemaaktDatum" Type="datetime" Nullable="false" />
+    <Property Name="Beoordeling" Type="int" Nullable="false" />
+    <Property Name="Commentaar" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GEBRUIKERs1">
+    <Key>
+      <PropertyRef Name="GerbuikerID" />
+    </Key>
+    <Property Name="GerbuikerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GebruikersNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VoorNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AchterNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Leeftijd" Type="datetime" Nullable="false" />
+    <Property Name="EmailAdres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WachtWoord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegistratieDatum" Type="datetime" Nullable="false" />
+    <Property Name="Rank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WIJZIGINGs">
+    <Key>
+      <PropertyRef Name="WijzigingID" />
+      <PropertyRef Name="GebruikerID" />
+    </Key>
+    <Property Name="WijzigingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GebruikerID" Type="int" Nullable="false" />
+    <Property Name="AangepasteEntiteit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EntiteitID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AangepasteVak" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AanpasDatum" Type="datetime" Nullable="false" />
+    <Property Name="OudData" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NieuwData" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BLOCKEDs">
+    <Key>
+      <PropertyRef Name="BlockID" />
+      <PropertyRef Name="GebruikerID" />
+    </Key>
+    <Property Name="BlockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GebruikerID" Type="int" Nullable="false" />
+    <Property Name="BlockedDoor" Type="int" Nullable="false" />
+    <Property Name="BlockDatum" Type="datetime" Nullable="false" />
+    <Property Name="BlockReden" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GROEPGEBRUIKERs">
+    <Key>
+      <PropertyRef Name="GroepID" />
+      <PropertyRef Name="GebruikerID" />
+    </Key>
+    <Property Name="GroepID" Type="int" Nullable="false" />
+    <Property Name="GebruikerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GROEPs">
+    <Key>
+      <PropertyRef Name="GroepID" />
+    </Key>
+    <Property Name="GroepID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroepNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AangemaaktDatum" Type="datetime" Nullable="false" />
+    <Property Name="AangemaaktDoor" Type="int" Nullable="false" />
+    <Property Name="GroepBeschrijving" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FILMGENREs">
+    <Key>
+      <PropertyRef Name="FilmID" />
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="FilmID" Type="int" Nullable="false" />
+    <Property Name="GenreID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GENREs">
+    <Key>
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GenreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenreNaam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FILMFILMTAAL">
+    <End Role="FILM" Type="DBModel.Store.FILMs" Multiplicity="1" />
+    <End Role="FILMTAAL" Type="DBModel.Store.FILMTAALs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="FILMTAAL">
+        <PropertyRef Name="FilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TAALFILMTAAL">
+    <End Role="TAAL" Type="DBModel.Store.TAALs" Multiplicity="1" />
+    <End Role="FILMTAAL" Type="DBModel.Store.FILMTAALs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAAL">
+        <PropertyRef Name="TaalID" />
+      </Principal>
+      <Dependent Role="FILMTAAL">
+        <PropertyRef Name="TaalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILMFILMTYPE">
+    <End Role="FILM" Type="DBModel.Store.FILMs" Multiplicity="1" />
+    <End Role="FILMTYPE" Type="DBModel.Store.FILMTYPEs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="FILMTYPE">
+        <PropertyRef Name="FilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TYPEFILMTYPE">
+    <End Role="TYPE" Type="DBModel.Store.TYPEs" Multiplicity="1" />
+    <End Role="FILMTYPE" Type="DBModel.Store.FILMTYPEs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="FILMTYPE">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILMFILMREGISSEUR">
+    <End Role="FILM" Type="DBModel.Store.FILMs" Multiplicity="1" />
+    <End Role="FILMREGISSEUR" Type="DBModel.Store.FILMREGISSEURs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="FILMREGISSEUR">
+        <PropertyRef Name="FilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="REGISSEURFILMREGISSEUR">
+    <End Role="REGISSEUR" Type="DBModel.Store.REGISSEURs" Multiplicity="1" />
+    <End Role="FILMREGISSEUR" Type="DBModel.Store.FILMREGISSEURs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REGISSEUR">
+        <PropertyRef Name="RegiID" />
+      </Principal>
+      <Dependent Role="FILMREGISSEUR">
+        <PropertyRef Name="RegiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACTEURROL">
+    <End Role="ACTEUR" Type="DBModel.Store.ACTEURs" Multiplicity="1" />
+    <End Role="ROL" Type="DBModel.Store.ROLs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTEUR">
+        <PropertyRef Name="ActeurID" />
+      </Principal>
+      <Dependent Role="ROL">
+        <PropertyRef Name="ActeurID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILMROL">
+    <End Role="FILM" Type="DBModel.Store.FILMs" Multiplicity="1" />
+    <End Role="ROL" Type="DBModel.Store.ROLs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="ROL">
+        <PropertyRef Name="FilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILMBEOORDELING">
+    <End Role="FILM" Type="DBModel.Store.FILMs" Multiplicity="1" />
+    <End Role="BEOORDELING" Type="DBModel.Store.BEOORDELINGs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="BEOORDELING">
+        <PropertyRef Name="FilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GEBRUIKERBEOORDELING">
+    <End Role="GEBRUIKER" Type="DBModel.Store.GEBRUIKERs1" Multiplicity="1" />
+    <End Role="BEOORDELING" Type="DBModel.Store.BEOORDELINGs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEBRUIKER">
+        <PropertyRef Name="GerbuikerID" />
+      </Principal>
+      <Dependent Role="BEOORDELING">
+        <PropertyRef Name="GebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GEBRUIKERWIJZIGING">
+    <End Role="GEBRUIKER" Type="DBModel.Store.GEBRUIKERs1" Multiplicity="1" />
+    <End Role="WIJZIGING" Type="DBModel.Store.WIJZIGINGs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEBRUIKER">
+        <PropertyRef Name="GerbuikerID" />
+      </Principal>
+      <Dependent Role="WIJZIGING">
+        <PropertyRef Name="GebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GEBRUIKERBLOCKED">
+    <End Role="GEBRUIKER" Type="DBModel.Store.GEBRUIKERs1" Multiplicity="1" />
+    <End Role="BLOCKED" Type="DBModel.Store.BLOCKEDs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEBRUIKER">
+        <PropertyRef Name="GerbuikerID" />
+      </Principal>
+      <Dependent Role="BLOCKED">
+        <PropertyRef Name="GebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GROEPGROEPGEBRUIKER">
+    <End Role="GROEP" Type="DBModel.Store.GROEPs" Multiplicity="1" />
+    <End Role="GROEPGEBRUIKER" Type="DBModel.Store.GROEPGEBRUIKERs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GROEP">
+        <PropertyRef Name="GroepID" />
+      </Principal>
+      <Dependent Role="GROEPGEBRUIKER">
+        <PropertyRef Name="GroepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GEBRUIKERGROEPGEBRUIKER">
+    <End Role="GEBRUIKER" Type="DBModel.Store.GEBRUIKERs1" Multiplicity="1" />
+    <End Role="GROEPGEBRUIKER" Type="DBModel.Store.GROEPGEBRUIKERs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEBRUIKER">
+        <PropertyRef Name="GerbuikerID" />
+      </Principal>
+      <Dependent Role="GROEPGEBRUIKER">
+        <PropertyRef Name="GebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GENREFILMGENRE">
+    <End Role="GENRE" Type="DBModel.Store.GENREs" Multiplicity="1" />
+    <End Role="FILMGENRE" Type="DBModel.Store.FILMGENREs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GENRE">
+        <PropertyRef Name="GenreID" />
+      </Principal>
+      <Dependent Role="FILMGENRE">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILMFILMGENRE">
+    <End Role="FILM" Type="DBModel.Store.FILMs" Multiplicity="1" />
+    <End Role="FILMGENRE" Type="DBModel.Store.FILMGENREs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="FILMGENRE">
+        <PropertyRef Name="FilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DBModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FILMs" EntityType="DBModel.FILM" />
+          <EntitySet Name="FILMTAALs" EntityType="DBModel.FILMTAAL" />
+          <EntitySet Name="TAALs" EntityType="DBModel.TAAL" />
+          <AssociationSet Name="FILMFILMTAAL" Association="DBModel.FILMFILMTAAL">
+            <End Role="FILM" EntitySet="FILMs" />
+            <End Role="FILMTAAL" EntitySet="FILMTAALs" />
+          </AssociationSet>
+          <AssociationSet Name="TAALFILMTAAL" Association="DBModel.TAALFILMTAAL">
+            <End Role="TAAL" EntitySet="TAALs" />
+            <End Role="FILMTAAL" EntitySet="FILMTAALs" />
+          </AssociationSet>
+          <EntitySet Name="FILMTYPEs" EntityType="DBModel.FILMTYPE" />
+          <AssociationSet Name="FILMFILMTYPE" Association="DBModel.FILMFILMTYPE">
+            <End Role="FILM" EntitySet="FILMs" />
+            <End Role="FILMTYPE" EntitySet="FILMTYPEs" />
+          </AssociationSet>
+          <EntitySet Name="TYPEs" EntityType="DBModel.TYPE" />
+          <AssociationSet Name="TYPEFILMTYPE" Association="DBModel.TYPEFILMTYPE">
+            <End Role="TYPE" EntitySet="TYPEs" />
+            <End Role="FILMTYPE" EntitySet="FILMTYPEs" />
+          </AssociationSet>
+          <EntitySet Name="FILMREGISSEURs" EntityType="DBModel.FILMREGISSEUR" />
+          <EntitySet Name="REGISSEURs" EntityType="DBModel.REGISSEUR" />
+          <AssociationSet Name="FILMFILMREGISSEUR" Association="DBModel.FILMFILMREGISSEUR">
+            <End Role="FILM" EntitySet="FILMs" />
+            <End Role="FILMREGISSEUR" EntitySet="FILMREGISSEURs" />
+          </AssociationSet>
+          <AssociationSet Name="REGISSEURFILMREGISSEUR" Association="DBModel.REGISSEURFILMREGISSEUR">
+            <End Role="REGISSEUR" EntitySet="REGISSEURs" />
+            <End Role="FILMREGISSEUR" EntitySet="FILMREGISSEURs" />
+          </AssociationSet>
+          <EntitySet Name="ROLs" EntityType="DBModel.ROL" />
+          <EntitySet Name="ACTEURs" EntityType="DBModel.ACTEUR" />
+          <AssociationSet Name="ACTEURROL" Association="DBModel.ACTEURROL">
+            <End Role="ACTEUR" EntitySet="ACTEURs" />
+            <End Role="ROL" EntitySet="ROLs" />
+          </AssociationSet>
+          <AssociationSet Name="FILMROL" Association="DBModel.FILMROL">
+            <End Role="FILM" EntitySet="FILMs" />
+            <End Role="ROL" EntitySet="ROLs" />
+          </AssociationSet>
+          <EntitySet Name="BEOORDELINGs" EntityType="DBModel.BEOORDELING" />
+          <EntitySet Name="GEBRUIKERs1" EntityType="DBModel.GEBRUIKER" />
+          <AssociationSet Name="FILMBEOORDELING" Association="DBModel.FILMBEOORDELING">
+            <End Role="FILM" EntitySet="FILMs" />
+            <End Role="BEOORDELING" EntitySet="BEOORDELINGs" />
+          </AssociationSet>
+          <AssociationSet Name="GEBRUIKERBEOORDELING" Association="DBModel.GEBRUIKERBEOORDELING">
+            <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+            <End Role="BEOORDELING" EntitySet="BEOORDELINGs" />
+          </AssociationSet>
+          <EntitySet Name="WIJZIGINGs" EntityType="DBModel.WIJZIGING" />
+          <AssociationSet Name="GEBRUIKERWIJZIGING" Association="DBModel.GEBRUIKERWIJZIGING">
+            <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+            <End Role="WIJZIGING" EntitySet="WIJZIGINGs" />
+          </AssociationSet>
+          <EntitySet Name="BLOCKEDs" EntityType="DBModel.BLOCKED" />
+          <AssociationSet Name="GEBRUIKERBLOCKED" Association="DBModel.GEBRUIKERBLOCKED">
+            <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+            <End Role="BLOCKED" EntitySet="BLOCKEDs" />
+          </AssociationSet>
+          <EntitySet Name="GROEPGEBRUIKERs" EntityType="DBModel.GROEPGEBRUIKER" />
+          <EntitySet Name="GROEPs" EntityType="DBModel.GROEP" />
+          <AssociationSet Name="GROEPGROEPGEBRUIKER" Association="DBModel.GROEPGROEPGEBRUIKER">
+            <End Role="GROEP" EntitySet="GROEPs" />
+            <End Role="GROEPGEBRUIKER" EntitySet="GROEPGEBRUIKERs" />
+          </AssociationSet>
+          <AssociationSet Name="GEBRUIKERGROEPGEBRUIKER" Association="DBModel.GEBRUIKERGROEPGEBRUIKER">
+            <End Role="GEBRUIKER" EntitySet="GEBRUIKERs1" />
+            <End Role="GROEPGEBRUIKER" EntitySet="GROEPGEBRUIKERs" />
+          </AssociationSet>
+          <EntitySet Name="FILMGENREs" EntityType="DBModel.FILMGENRE" />
+          <EntitySet Name="GENREs" EntityType="DBModel.GENRE" />
+          <AssociationSet Name="GENREFILMGENRE" Association="DBModel.GENREFILMGENRE">
+            <End Role="GENRE" EntitySet="GENREs" />
+            <End Role="FILMGENRE" EntitySet="FILMGENREs" />
+          </AssociationSet>
+          <AssociationSet Name="FILMFILMGENRE" Association="DBModel.FILMFILMGENRE">
+            <End Role="FILM" EntitySet="FILMs" />
+            <End Role="FILMGENRE" EntitySet="FILMGENREs" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="FILM">
+          <Key>
+            <PropertyRef Name="FilmID" />
+          </Key>
+          <Property Name="IMDBNummer" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FilmNaam" Type="String" Nullable="false" />
+          <Property Name="Duur" Type="Int32" Nullable="false" />
+          <Property Name="Geluid" Type="String" Nullable="false" />
+          <Property Name="AlternatieveNaam" Type="String" Nullable="false" />
+          <Property Name="Poster" Type="String" Nullable="false" />
+          <Property Name="ToegevoegdDatum" Type="DateTime" Nullable="false" />
+          <Property Name="ToegevoegdDoor" Type="Int32" Nullable="false" />
+          <Property Name="Versie" Type="String" Nullable="false" />
+          <Property Name="GemiddeldeBeoordeling" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FILMTAALs" Relationship="DBModel.FILMFILMTAAL" FromRole="FILM" ToRole="FILMTAAL" />
+          <NavigationProperty Name="FILMTYPEs" Relationship="DBModel.FILMFILMTYPE" FromRole="FILM" ToRole="FILMTYPE" />
+          <NavigationProperty Name="FILMREGISSEURs" Relationship="DBModel.FILMFILMREGISSEUR" FromRole="FILM" ToRole="FILMREGISSEUR" />
+          <NavigationProperty Name="ROLs" Relationship="DBModel.FILMROL" FromRole="FILM" ToRole="ROL" />
+          <NavigationProperty Name="BEOORDELINGs" Relationship="DBModel.FILMBEOORDELING" FromRole="FILM" ToRole="BEOORDELING" />
+          <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="None" />
+          <NavigationProperty Name="FILMGENREs" Relationship="DBModel.FILMFILMGENRE" FromRole="FILM" ToRole="FILMGENRE" />
+        </EntityType>
+        <EntityType Name="FILMTAAL">
+          <Key>
+            <PropertyRef Name="FilmID" />
+            <PropertyRef Name="TaalID" />
+          </Key>
+          <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="TaalID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FILM" Relationship="DBModel.FILMFILMTAAL" FromRole="FILMTAAL" ToRole="FILM" />
+          <NavigationProperty Name="TAAL" Relationship="DBModel.TAALFILMTAAL" FromRole="FILMTAAL" ToRole="TAAL" />
+        </EntityType>
+        <EntityType Name="TAAL">
+          <Key>
+            <PropertyRef Name="TaalID" />
+          </Key>
+          <Property Name="TaalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaalNaam" Type="String" Nullable="false" />
+          <NavigationProperty Name="FILMTAALs" Relationship="DBModel.TAALFILMTAAL" FromRole="TAAL" ToRole="FILMTAAL" />
+        </EntityType>
+        <Association Name="FILMFILMTAAL">
+          <End Type="DBModel.FILM" Role="FILM" Multiplicity="1" />
+          <End Type="DBModel.FILMTAAL" Role="FILMTAAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILM">
+              <PropertyRef Name="FilmID" />
+            </Principal>
+            <Dependent Role="FILMTAAL">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TAALFILMTAAL">
+          <End Type="DBModel.TAAL" Role="TAAL" Multiplicity="1" />
+          <End Type="DBModel.FILMTAAL" Role="FILMTAAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAAL">
+              <PropertyRef Name="TaalID" />
+            </Principal>
+            <Dependent Role="FILMTAAL">
+              <PropertyRef Name="TaalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FILMTYPE">
+          <Key>
+            <PropertyRef Name="FilmID" />
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FILM" Relationship="DBModel.FILMFILMTYPE" FromRole="FILMTYPE" ToRole="FILM" />
+          <NavigationProperty Name="TYPE" Relationship="DBModel.TYPEFILMTYPE" FromRole="FILMTYPE" ToRole="TYPE" />
+        </EntityType>
+        <EntityType Name="TYPE">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeNaam" Type="String" Nullable="false" />
+          <NavigationProperty Name="FILMTYPEs" Relationship="DBModel.TYPEFILMTYPE" FromRole="TYPE" ToRole="FILMTYPE" />
+        </EntityType>
+        <Association Name="FILMFILMTYPE">
+          <End Type="DBModel.FILM" Role="FILM" Multiplicity="1" />
+          <End Type="DBModel.FILMTYPE" Role="FILMTYPE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILM">
+              <PropertyRef Name="FilmID" />
+            </Principal>
+            <Dependent Role="FILMTYPE">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TYPEFILMTYPE">
+          <End Type="DBModel.TYPE" Role="TYPE" Multiplicity="1" />
+          <End Type="DBModel.FILMTYPE" Role="FILMTYPE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPE">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="FILMTYPE">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FILMREGISSEUR">
+          <Key>
+            <PropertyRef Name="RegiID" />
+            <PropertyRef Name="FilmID" />
+          </Key>
+          <Property Name="RegiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FilmID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FILM" Relationship="DBModel.FILMFILMREGISSEUR" FromRole="FILMREGISSEUR" ToRole="FILM" />
+          <NavigationProperty Name="REGISSEUR" Relationship="DBModel.REGISSEURFILMREGISSEUR" FromRole="FILMREGISSEUR" ToRole="REGISSEUR" />
+        </EntityType>
+        <EntityType Name="REGISSEUR">
+          <Key>
+            <PropertyRef Name="RegiID" />
+          </Key>
+          <Property Name="RegiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegiNaam" Type="String" Nullable="false" />
+          <NavigationProperty Name="FILMREGISSEURs" Relationship="DBModel.REGISSEURFILMREGISSEUR" FromRole="REGISSEUR" ToRole="FILMREGISSEUR" />
+        </EntityType>
+        <Association Name="FILMFILMREGISSEUR">
+          <End Type="DBModel.FILM" Role="FILM" Multiplicity="1" />
+          <End Type="DBModel.FILMREGISSEUR" Role="FILMREGISSEUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILM">
+              <PropertyRef Name="FilmID" />
+            </Principal>
+            <Dependent Role="FILMREGISSEUR">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="REGISSEURFILMREGISSEUR">
+          <End Type="DBModel.REGISSEUR" Role="REGISSEUR" Multiplicity="1" />
+          <End Type="DBModel.FILMREGISSEUR" Role="FILMREGISSEUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGISSEUR">
+              <PropertyRef Name="RegiID" />
+            </Principal>
+            <Dependent Role="FILMREGISSEUR">
+              <PropertyRef Name="RegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="RolID" />
+            <PropertyRef Name="FilmID" />
+            <PropertyRef Name="ActeurID" />
+          </Key>
+          <Property Name="RolID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FilmID" Type="Int32" Nullable="false" />
+          <Property Name="RolNaam" Type="String" Nullable="false" />
+          <Property Name="ActeurID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ACTEUR" Relationship="DBModel.ACTEURROL" FromRole="ROL" ToRole="ACTEUR" />
+          <NavigationProperty Name="FILM" Relationship="DBModel.FILMROL" FromRole="ROL" ToRole="FILM" />
+        </EntityType>
+        <EntityType Name="ACTEUR">
+          <Key>
+            <PropertyRef Name="ActeurID" />
+          </Key>
+          <Property Name="ActeurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActeurNaam" Type="String" Nullable="false" />
+          <NavigationProperty Name="ROLs" Relationship="DBModel.ACTEURROL" FromRole="ACTEUR" ToRole="ROL" />
+        </EntityType>
+        <Association Name="ACTEURROL">
+          <End Type="DBModel.ACTEUR" Role="ACTEUR" Multiplicity="1" />
+          <End Type="DBModel.ROL" Role="ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTEUR">
+              <PropertyRef Name="ActeurID" />
+            </Principal>
+            <Dependent Role="ROL">
+              <PropertyRef Name="ActeurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FILMROL">
+          <End Type="DBModel.FILM" Role="FILM" Multiplicity="1" />
+          <End Type="DBModel.ROL" Role="ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILM">
+              <PropertyRef Name="FilmID" />
+            </Principal>
+            <Dependent Role="ROL">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BEOORDELING">
+          <Key>
+            <PropertyRef Name="GebruikerID" />
+            <PropertyRef Name="FilmID" />
+          </Key>
+          <Property Name="GebruikerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="AangemaaktDatum" Type="DateTime" Nullable="false" />
+          <Property Name="Beoordeling" Type="Int32" Nullable="false" />
+          <Property Name="Commentaar" Type="String" Nullable="false" />
+          <NavigationProperty Name="FILM" Relationship="DBModel.FILMBEOORDELING" FromRole="BEOORDELING" ToRole="FILM" />
+          <NavigationProperty Name="GEBRUIKER" Relationship="DBModel.GEBRUIKERBEOORDELING" FromRole="BEOORDELING" ToRole="GEBRUIKER" />
+        </EntityType>
+        <EntityType Name="GEBRUIKER">
+          <Key>
+            <PropertyRef Name="GerbuikerID" />
+          </Key>
+          <Property Name="GerbuikerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GebruikersNaam" Type="String" Nullable="false" />
+          <Property Name="VoorNaam" Type="String" Nullable="false" />
+          <Property Name="AchterNaam" Type="String" Nullable="false" />
+          <Property Name="Leeftijd" Type="DateTime" Nullable="false" />
+          <Property Name="EmailAdres" Type="String" Nullable="false" />
+          <Property Name="WachtWoord" Type="String" Nullable="false" />
+          <Property Name="RegistratieDatum" Type="DateTime" Nullable="false" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BEOORDELINGs" Relationship="DBModel.GEBRUIKERBEOORDELING" FromRole="GEBRUIKER" ToRole="BEOORDELING" />
+          <NavigationProperty Name="WIJZIGINGs" Relationship="DBModel.GEBRUIKERWIJZIGING" FromRole="GEBRUIKER" ToRole="WIJZIGING" />
+          <NavigationProperty Name="BLOCKEDs" Relationship="DBModel.GEBRUIKERBLOCKED" FromRole="GEBRUIKER" ToRole="BLOCKED" />
+          <NavigationProperty Name="GROEPGEBRUIKERs" Relationship="DBModel.GEBRUIKERGROEPGEBRUIKER" FromRole="GEBRUIKER" ToRole="GROEPGEBRUIKER" />
+        </EntityType>
+        <Association Name="FILMBEOORDELING">
+          <End Type="DBModel.FILM" Role="FILM" Multiplicity="1" />
+          <End Type="DBModel.BEOORDELING" Role="BEOORDELING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILM">
+              <PropertyRef Name="FilmID" />
+            </Principal>
+            <Dependent Role="BEOORDELING">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GEBRUIKERBEOORDELING">
+          <End Type="DBModel.GEBRUIKER" Role="GEBRUIKER" Multiplicity="1" />
+          <End Type="DBModel.BEOORDELING" Role="BEOORDELING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEBRUIKER">
+              <PropertyRef Name="GerbuikerID" />
+            </Principal>
+            <Dependent Role="BEOORDELING">
+              <PropertyRef Name="GebruikerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WIJZIGING">
+          <Key>
+            <PropertyRef Name="WijzigingID" />
+            <PropertyRef Name="GebruikerID" />
+          </Key>
+          <Property Name="WijzigingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GebruikerID" Type="Int32" Nullable="false" />
+          <Property Name="AangepasteEntiteit" Type="String" Nullable="false" />
+          <Property Name="EntiteitID" Type="String" Nullable="false" />
+          <Property Name="AangepasteVak" Type="String" Nullable="false" />
+          <Property Name="AanpasDatum" Type="DateTime" Nullable="false" />
+          <Property Name="OudData" Type="String" Nullable="false" />
+          <Property Name="NieuwData" Type="String" Nullable="false" />
+          <NavigationProperty Name="GEBRUIKER" Relationship="DBModel.GEBRUIKERWIJZIGING" FromRole="WIJZIGING" ToRole="GEBRUIKER" />
+        </EntityType>
+        <Association Name="GEBRUIKERWIJZIGING">
+          <End Type="DBModel.GEBRUIKER" Role="GEBRUIKER" Multiplicity="1" />
+          <End Type="DBModel.WIJZIGING" Role="WIJZIGING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEBRUIKER">
+              <PropertyRef Name="GerbuikerID" />
+            </Principal>
+            <Dependent Role="WIJZIGING">
+              <PropertyRef Name="GebruikerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BLOCKED">
+          <Key>
+            <PropertyRef Name="BlockID" />
+            <PropertyRef Name="GebruikerID" />
+          </Key>
+          <Property Name="BlockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GebruikerID" Type="Int32" Nullable="false" />
+          <Property Name="BlockedDoor" Type="Int32" Nullable="false" />
+          <Property Name="BlockDatum" Type="DateTime" Nullable="false" />
+          <Property Name="BlockReden" Type="String" Nullable="false" />
+          <NavigationProperty Name="GEBRUIKER" Relationship="DBModel.GEBRUIKERBLOCKED" FromRole="BLOCKED" ToRole="GEBRUIKER" />
+        </EntityType>
+        <Association Name="GEBRUIKERBLOCKED">
+          <End Type="DBModel.GEBRUIKER" Role="GEBRUIKER" Multiplicity="1" />
+          <End Type="DBModel.BLOCKED" Role="BLOCKED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEBRUIKER">
+              <PropertyRef Name="GerbuikerID" />
+            </Principal>
+            <Dependent Role="BLOCKED">
+              <PropertyRef Name="GebruikerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GROEPGEBRUIKER">
+          <Key>
+            <PropertyRef Name="GroepID" />
+            <PropertyRef Name="GebruikerID" />
+          </Key>
+          <Property Name="GroepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="GebruikerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GROEP" Relationship="DBModel.GROEPGROEPGEBRUIKER" FromRole="GROEPGEBRUIKER" ToRole="GROEP" />
+          <NavigationProperty Name="GEBRUIKER" Relationship="DBModel.GEBRUIKERGROEPGEBRUIKER" FromRole="GROEPGEBRUIKER" ToRole="GEBRUIKER" />
+        </EntityType>
+        <EntityType Name="GROEP">
+          <Key>
+            <PropertyRef Name="GroepID" />
+          </Key>
+          <Property Name="GroepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroepNaam" Type="String" Nullable="false" />
+          <Property Name="AangemaaktDatum" Type="DateTime" Nullable="false" />
+          <Property Name="AangemaaktDoor" Type="Int32" Nullable="false" />
+          <Property Name="GroepBeschrijving" Type="String" Nullable="false" />
+          <NavigationProperty Name="GROEPGEBRUIKERs" Relationship="DBModel.GROEPGROEPGEBRUIKER" FromRole="GROEP" ToRole="GROEPGEBRUIKER" />
+        </EntityType>
+        <Association Name="GROEPGROEPGEBRUIKER">
+          <End Type="DBModel.GROEP" Role="GROEP" Multiplicity="1" />
+          <End Type="DBModel.GROEPGEBRUIKER" Role="GROEPGEBRUIKER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GROEP">
+              <PropertyRef Name="GroepID" />
+            </Principal>
+            <Dependent Role="GROEPGEBRUIKER">
+              <PropertyRef Name="GroepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GEBRUIKERGROEPGEBRUIKER">
+          <End Type="DBModel.GEBRUIKER" Role="GEBRUIKER" Multiplicity="1" />
+          <End Type="DBModel.GROEPGEBRUIKER" Role="GROEPGEBRUIKER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEBRUIKER">
+              <PropertyRef Name="GerbuikerID" />
+            </Principal>
+            <Dependent Role="GROEPGEBRUIKER">
+              <PropertyRef Name="GebruikerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FILMGENRE">
+          <Key>
+            <PropertyRef Name="FilmID" />
+            <PropertyRef Name="GenreID" />
+          </Key>
+          <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="GenreID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GENRE" Relationship="DBModel.GENREFILMGENRE" FromRole="FILMGENRE" ToRole="GENRE" />
+          <NavigationProperty Name="FILM" Relationship="DBModel.FILMFILMGENRE" FromRole="FILMGENRE" ToRole="FILM" />
+        </EntityType>
+        <EntityType Name="GENRE">
+          <Key>
+            <PropertyRef Name="GenreID" />
+          </Key>
+          <Property Name="GenreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenreNaam" Type="String" Nullable="false" />
+          <NavigationProperty Name="FILMGENREs" Relationship="DBModel.GENREFILMGENRE" FromRole="GENRE" ToRole="FILMGENRE" />
+        </EntityType>
+        <Association Name="GENREFILMGENRE">
+          <End Type="DBModel.GENRE" Role="GENRE" Multiplicity="1" />
+          <End Type="DBModel.FILMGENRE" Role="FILMGENRE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENRE">
+              <PropertyRef Name="GenreID" />
+            </Principal>
+            <Dependent Role="FILMGENRE">
+              <PropertyRef Name="GenreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FILMFILMGENRE">
+          <End Type="DBModel.FILM" Role="FILM" Multiplicity="1" />
+          <End Type="DBModel.FILMGENRE" Role="FILMGENRE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILM">
+              <PropertyRef Name="FilmID" />
+            </Principal>
+            <Dependent Role="FILMGENRE">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBModelContainer">
+    <EntitySetMapping Name="FILMs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.FILM)">
+        <MappingFragment StoreEntitySet="FILMs">
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+          <ScalarProperty Name="IMDBNummer" ColumnName="IMDBNummer" />
+          <ScalarProperty Name="FilmNaam" ColumnName="FilmNaam" />
+          <ScalarProperty Name="Duur" ColumnName="Duur" />
+          <ScalarProperty Name="Geluid" ColumnName="Geluid" />
+          <ScalarProperty Name="AlternatieveNaam" ColumnName="AlternatieveNaam" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="ToegevoegdDatum" ColumnName="ToegevoegdDatum" />
+          <ScalarProperty Name="ToegevoegdDoor" ColumnName="ToegevoegdDoor" />
+          <ScalarProperty Name="Versie" ColumnName="Versie" />
+          <ScalarProperty Name="GemiddeldeBeoordeling" ColumnName="GemiddeldeBeoordeling" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILMTAALs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.FILMTAAL)">
+        <MappingFragment StoreEntitySet="FILMTAALs">
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+          <ScalarProperty Name="TaalID" ColumnName="TaalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAALs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.TAAL)">
+        <MappingFragment StoreEntitySet="TAALs">
+          <ScalarProperty Name="TaalID" ColumnName="TaalID" />
+          <ScalarProperty Name="TaalNaam" ColumnName="TaalNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILMTYPEs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.FILMTYPE)">
+        <MappingFragment StoreEntitySet="FILMTYPEs">
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPEs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.TYPE)">
+        <MappingFragment StoreEntitySet="TYPEs">
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TypeNaam" ColumnName="TypeNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILMREGISSEURs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.FILMREGISSEUR)">
+        <MappingFragment StoreEntitySet="FILMREGISSEURs">
+          <ScalarProperty Name="RegiID" ColumnName="RegiID" />
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGISSEURs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.REGISSEUR)">
+        <MappingFragment StoreEntitySet="REGISSEURs">
+          <ScalarProperty Name="RegiID" ColumnName="RegiID" />
+          <ScalarProperty Name="RegiNaam" ColumnName="RegiNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.ROL)">
+        <MappingFragment StoreEntitySet="ROLs">
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+          <ScalarProperty Name="ActeurID" ColumnName="ActeurID" />
+          <ScalarProperty Name="RolNaam" ColumnName="RolNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTEURs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.ACTEUR)">
+        <MappingFragment StoreEntitySet="ACTEURs">
+          <ScalarProperty Name="ActeurID" ColumnName="ActeurID" />
+          <ScalarProperty Name="ActeurNaam" ColumnName="ActeurNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BEOORDELINGs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.BEOORDELING)">
+        <MappingFragment StoreEntitySet="BEOORDELINGs">
+          <ScalarProperty Name="GebruikerID" ColumnName="GebruikerID" />
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+          <ScalarProperty Name="AangemaaktDatum" ColumnName="AangemaaktDatum" />
+          <ScalarProperty Name="Beoordeling" ColumnName="Beoordeling" />
+          <ScalarProperty Name="Commentaar" ColumnName="Commentaar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEBRUIKERs1">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.GEBRUIKER)">
+        <MappingFragment StoreEntitySet="GEBRUIKERs1">
+          <ScalarProperty Name="GerbuikerID" ColumnName="GerbuikerID" />
+          <ScalarProperty Name="GebruikersNaam" ColumnName="GebruikersNaam" />
+          <ScalarProperty Name="VoorNaam" ColumnName="VoorNaam" />
+          <ScalarProperty Name="AchterNaam" ColumnName="AchterNaam" />
+          <ScalarProperty Name="Leeftijd" ColumnName="Leeftijd" />
+          <ScalarProperty Name="EmailAdres" ColumnName="EmailAdres" />
+          <ScalarProperty Name="WachtWoord" ColumnName="WachtWoord" />
+          <ScalarProperty Name="RegistratieDatum" ColumnName="RegistratieDatum" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WIJZIGINGs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.WIJZIGING)">
+        <MappingFragment StoreEntitySet="WIJZIGINGs">
+          <ScalarProperty Name="WijzigingID" ColumnName="WijzigingID" />
+          <ScalarProperty Name="GebruikerID" ColumnName="GebruikerID" />
+          <ScalarProperty Name="AangepasteEntiteit" ColumnName="AangepasteEntiteit" />
+          <ScalarProperty Name="EntiteitID" ColumnName="EntiteitID" />
+          <ScalarProperty Name="AangepasteVak" ColumnName="AangepasteVak" />
+          <ScalarProperty Name="AanpasDatum" ColumnName="AanpasDatum" />
+          <ScalarProperty Name="OudData" ColumnName="OudData" />
+          <ScalarProperty Name="NieuwData" ColumnName="NieuwData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BLOCKEDs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.BLOCKED)">
+        <MappingFragment StoreEntitySet="BLOCKEDs">
+          <ScalarProperty Name="BlockID" ColumnName="BlockID" />
+          <ScalarProperty Name="GebruikerID" ColumnName="GebruikerID" />
+          <ScalarProperty Name="BlockedDoor" ColumnName="BlockedDoor" />
+          <ScalarProperty Name="BlockDatum" ColumnName="BlockDatum" />
+          <ScalarProperty Name="BlockReden" ColumnName="BlockReden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GROEPGEBRUIKERs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.GROEPGEBRUIKER)">
+        <MappingFragment StoreEntitySet="GROEPGEBRUIKERs">
+          <ScalarProperty Name="GroepID" ColumnName="GroepID" />
+          <ScalarProperty Name="GebruikerID" ColumnName="GebruikerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GROEPs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.GROEP)">
+        <MappingFragment StoreEntitySet="GROEPs">
+          <ScalarProperty Name="GroepID" ColumnName="GroepID" />
+          <ScalarProperty Name="GroepNaam" ColumnName="GroepNaam" />
+          <ScalarProperty Name="AangemaaktDatum" ColumnName="AangemaaktDatum" />
+          <ScalarProperty Name="AangemaaktDoor" ColumnName="AangemaaktDoor" />
+          <ScalarProperty Name="GroepBeschrijving" ColumnName="GroepBeschrijving" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILMGENREs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.FILMGENRE)">
+        <MappingFragment StoreEntitySet="FILMGENREs">
+          <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GENREs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.GENRE)">
+        <MappingFragment StoreEntitySet="GENREs">
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="GenreNaam" ColumnName="GenreNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
