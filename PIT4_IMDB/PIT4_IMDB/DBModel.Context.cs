@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace  
+namespace DBModel.bu
 {
     using System;
     using System.Data.Entity;
