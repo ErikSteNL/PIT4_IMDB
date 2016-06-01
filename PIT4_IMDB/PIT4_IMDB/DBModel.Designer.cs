@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Dropbox\PIT4\Code\PIT4_IMDB\PIT4_IMDB\DBModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Leonardo\Documents\PIT4_Leonardo_Github\PIT4_IMDB\PIT4_IMDB\PIT4_IMDB\DBModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
