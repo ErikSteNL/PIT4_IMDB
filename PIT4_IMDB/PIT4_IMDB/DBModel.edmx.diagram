@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9a9a71bc3a0945c39783a1b1b0ed6334" Name="Diagram1" ZoomLevel="70" >
+      <Diagram DiagramId="9a9a71bc3a0945c39783a1b1b0ed6334" Name="Diagram1" ZoomLevel="92" >
         <EntityTypeShape EntityType="DBModel.bu.FILM" Width="1.875" PointX="7.375" PointY="5.25" />
         <EntityTypeShape EntityType="DBModel.bu.FILMTAAL" Width="1.5" PointX="7.625" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.bu.TAAL" Width="1.5" PointX="7.625" PointY="0.75" IsExpanded="true" />
