@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PIT4_IMDB
+namespace DBModel.bu
 {
     using System;
     using System.Collections.Generic;
