@@ -80,7 +80,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DBModel.Context.cs</LastGenOutput>
       <DependentUpon>DBModel.edmx</DependentUpon>
-      <CustomToolNamespace>DBModel.bu</CustomToolNamespace>
+      <CustomToolNamespace> </CustomToolNamespace>
     </Content>
     <Content Include="DBModel.edmx.sql" />
     <Content Include="DBModel.tt">
