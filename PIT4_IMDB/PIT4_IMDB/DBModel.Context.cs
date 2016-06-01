@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PIT4_IMDB
+namespace  
 {
     using System;
     using System.Data.Entity;
